@@ -16,3 +16,4 @@ export const userAuthentication = (req, res, next) => {
         res.status(401).json({ error: 'Not authenticated' })
     }
 }
+
