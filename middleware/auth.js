@@ -1,4 +1,6 @@
 import jwt from "jsonwebtoken"
+import { UserModel } from "../models/user_model.js";
+import { roles } from "../config/role.js";
 
 export const userAuthentication = (req, res, next) => {
     if (req.headers.authorization) {
@@ -14,6 +16,27 @@ export const userAuthentication = (req, res, next) => {
         }
     } else {
         res.status(401).json({ error: 'Not authenticated' })
+    }
+};
+
+export const hasPermission = (permission) => {
+    return async (req, res, next) => {
+        try {
+            // Get user id request
+            const userId =  req?.user?.id;
+            // Find user by id
+            const user = await UserModel.findById(userId);
+            // Find user role with permissions
+            const userRole = roles.find(element => element.role === user.role);
+            // Use role to check if user has permission
+            if (userRole && userRole.permissions.includes(permission)) {
+                next();
+            } else {
+                res.status(403).json('You are Not Authorized!');
+            }
+        } catch (error) {
+            next(error);
+        }
     }
 }
 
