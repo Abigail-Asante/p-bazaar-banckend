@@ -15,3 +15,18 @@ export const loginValidator = Joi.object({
     password: Joi.string().required(),
 });
 
+export const createUserValidator = Joi.object({
+    name: Joi.string().required(),
+    username: Joi.string().required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().required(),
+    role: Joi.string().required().valid('superadmin', 'admin'),
+});
+
+export const updateUserValidator = Joi.object({
+    name: Joi.string(),
+    username: Joi.string(),
+    email: Joi.string().email(),
+    password: Joi.string(),
+    role: Joi.string().valid('superadmin', 'admin'),
+});
