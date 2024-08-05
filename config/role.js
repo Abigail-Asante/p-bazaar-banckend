@@ -8,6 +8,7 @@ export const roles = [
             'read_users',
             'update_user',
             'delete_user',
+            'create_product',
         ]
     },
     {
@@ -18,6 +19,7 @@ export const roles = [
             'create_user',
             'read_users',
             'update_user',
+            'create_product',
         ]
     },
     {
@@ -25,6 +27,7 @@ export const roles = [
         permissions: [
             'update_profile',
             'delete_profile',
+            'create_product',
             
         ]
     },
@@ -33,6 +36,7 @@ export const roles = [
         permissions: [
             'update_profile',
             'delete_profile',
+            'create_product',
         ]
     },
     {
@@ -40,6 +44,7 @@ export const roles = [
         permissions: [
             'update_profile',
             'delete_profile',
+            'create_product',
         ]
     }
 ];
