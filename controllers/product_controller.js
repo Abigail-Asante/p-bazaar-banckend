@@ -7,12 +7,12 @@ export const createProduct = async (req, res, next) => {
         // schema model validation
         const { error, value } = productSchema.validate({
             ...req.body,
-            image: req.file || req.file.filename
+            image: req.file.filename
         });
         if (error) {
             return res.status(400).send(error.details[0].message);
         };
-        const userId = req.user.id
+        const userId = req?.user?.id
         // find user
         const user = await UserModel.findById(userId);
         if (!user) {
