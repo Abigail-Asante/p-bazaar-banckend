@@ -9,6 +9,8 @@ export const roles = [
             'update_user',
             'delete_user',
             'create_product',
+            'update_product',
+            'delete_product'
         ]
     },
     {
@@ -20,6 +22,8 @@ export const roles = [
             'read_users',
             'update_user',
             'create_product',
+            'update_product',
+            'delete_product'
         ]
     },
     {
@@ -28,6 +32,8 @@ export const roles = [
             'update_profile',
             'delete_profile',
             'create_product',
+            'update_product',
+            'delete_product'
             
         ]
     },
@@ -37,6 +43,8 @@ export const roles = [
             'update_profile',
             'delete_profile',
             'create_product',
+            'update_product',
+            'delete_product'
         ]
     },
     {
@@ -45,6 +53,8 @@ export const roles = [
             'update_profile',
             'delete_profile',
             'create_product',
+            'update_product',
+            'delete_product'
         ]
     }
 ];

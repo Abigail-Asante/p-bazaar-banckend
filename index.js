@@ -6,6 +6,7 @@ import errorHandler from "errorhandler";
 import { dbconnection } from "./config/db.js";
 import userRouter from "./routes/user_route.js";
 import productRouter from "./routes/product_route.js";
+import orderRouter from "./routes/order_route.js";
 
 
 // create server
@@ -26,6 +27,7 @@ app.use(cors({credentials:true, origin:'*'}));
 // connect router
 app.use(userRouter);
 app.use(productRouter);
+app.use(orderRouter);
 
 
 // Apply swagger documentation

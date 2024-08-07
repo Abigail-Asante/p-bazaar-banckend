@@ -6,13 +6,13 @@ const productSchema = new Schema({
     name: { type: String, unique: true, required: true },
     description: { type: String },
     product_items: [{ type: String }],
-    price: { type: String },
+    price: { type: String, required:true },
     quantity: { type: String, required: true },
-    image: { type: String },
+    image: { type: String, default: 'No image' },
     favourite: { type: Boolean, default: false },
     location: { type: String, required: true },
     // categoryId: { type: Types.ObjectId, ref: 'category', required: true },
-    user: { type: Types.ObjectId, ref: 'User' }
+    userId: { type: Types.ObjectId, ref: 'User' }
 }, {
     timestamps: true,
 });
