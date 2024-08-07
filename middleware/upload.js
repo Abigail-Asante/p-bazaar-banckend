@@ -6,4 +6,4 @@ export const remoteUpload = multer({
         apiAccessToken: process.env.SAVEFILEORG_API_KEY,
         relativePath: 'p-bazaar/*'
     })
-})
+});

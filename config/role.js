@@ -9,6 +9,12 @@ export const roles = [
             'update_user',
             'delete_user',
             'create_product',
+            'update_product',
+            'delete_product',
+            'create_order',
+            'read_ order',
+            'update_order',
+            'delete_order'
         ]
     },
     {
@@ -20,6 +26,12 @@ export const roles = [
             'read_users',
             'update_user',
             'create_product',
+            'update_product',
+            'delete_product',
+            'create_order',
+            'read_ order',
+            'update_order',
+            'delete_order'
         ]
     },
     {
@@ -28,7 +40,13 @@ export const roles = [
             'update_profile',
             'delete_profile',
             'create_product',
-            
+            'update_product',
+            'delete_product',
+            'create_order',
+            'read_ order',
+            'update_order',
+            'delete_order'
+
         ]
     },
     {
@@ -37,6 +55,12 @@ export const roles = [
             'update_profile',
             'delete_profile',
             'create_product',
+            'update_product',
+            'delete_product',
+            'create_order',
+            'read_ order',
+            'update_order',
+            'delete_order'
         ]
     },
     {
@@ -44,7 +68,10 @@ export const roles = [
         permissions: [
             'update_profile',
             'delete_profile',
-            'create_product',
+            'create_order',
+            'read_ order',
+            'update_order',
+            'delete_order'
         ]
     }
 ];
