@@ -53,7 +53,10 @@ export const getAllOrders = async (req, res, next) => {
         if (!user) {
             return res.status(404).send("User not found")
         };
-        const orders = await OrderModel.find().select({password: false}).populate('userId').populate('productId');
+        const orders = await OrderModel.find()
+            .select({ password: false })
+            .populate('userId')
+            .populate('productId');
         res.status(200).json(orders);
     } catch (error) {
         console.error(error);
@@ -65,14 +68,21 @@ export const getAllOrders = async (req, res, next) => {
 export const getOrderById = async (req, res) => {
 
     try {
-        const order = await OrderModel.findById(req.params.id).select("-password").populate('userId').populate('productId');
+        const order = await OrderModel.findById(req.params.id)
+            .select("-password")
+            .populate('userId')
+            .populate('productId');
         if (!order) {
-            return res.status(404).json({ message: 'Order not found' });
+            return res.status(404).json({
+                message: 'Order not found'
+            });
         }
         res.status(200).json(order);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Server error' });
+        res.status(500).json({
+            message: 'Server error'
+        });
     }
 };
 
@@ -91,7 +101,8 @@ export const updateOrder = async (req, res, next) => {
             return res.status(404).send("User not found")
         };
 
-        const editOrder = await OrderModel.findByIdAndUpdate(req.params.id, value, { new: true });
+        const editOrder = await OrderModel.findByIdAndUpdate(req.params.id,
+            value, { new: true });
         if (!editOrder) {
             return res.status(404).json({
                 message: 'Order not found'
@@ -121,9 +132,13 @@ export const deleteOrder = async (req, res, next) => {
 
         const deleteOrder = await OrderModel.findByIdAndDelete(req.params.id);
         if (!deleteOrder) {
-            return res.status(404).json({ message: 'Order not found' });
+            return res.status(404).json({
+                message: 'Order not found'
+            });
         }
-        res.status(200).json({ message: 'Order deleted' });
+        res.status(200).json({
+            message: 'Order deleted'
+        });
     } catch (error) {
         next(error)
 

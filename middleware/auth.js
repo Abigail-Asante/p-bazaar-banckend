@@ -32,7 +32,7 @@ export const hasPermission = (permission) => {
             if (userRole && userRole.permissions.includes(permission)) {
                 next();
             } else {
-                res.status(403).json('You are Not Authorized!');
+                res.status(403).json('Oops you are Not Authorized!');
             }
         } catch (error) {
             next(error);
