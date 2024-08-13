@@ -19,13 +19,13 @@ export const createOrder = async (req, res, next) => {
         };
         // find the product the user wants to purchase
         const { productId, quantity, price } = value;
-        const product = await ProductModel.findById(productId, price, quantity);
+        const product = await ProductModel.findById(productId);
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
 
         // Calculate amount
-        const amount = product.price * quantity;
+        const amount = Number(product.price) * Number(product.quantity);
         const order = await OrderModel.create({
             ...value,
             userId: userId,
