@@ -5,6 +5,7 @@ import { productSchema } from "../validator/product_validator.js";
 export const createProduct = async (req, res, next) => {
     try {
         // schema model validation
+        console.log(req.file)
         const { error, value } = productSchema.validate({
             ...req.body,
             image: req.file.filename

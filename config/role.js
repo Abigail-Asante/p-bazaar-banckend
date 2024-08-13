@@ -12,7 +12,7 @@ export const roles = [
             'update_product',
             'delete_product',
             'create_order',
-            'read_ order',
+            'read_order',
             'update_order',
             'delete_order'
         ]
@@ -29,7 +29,7 @@ export const roles = [
             'update_product',
             'delete_product',
             'create_order',
-            'read_ order',
+            'read_order',
             'update_order',
             'delete_order'
         ]
@@ -43,7 +43,7 @@ export const roles = [
             'update_product',
             'delete_product',
             'create_order',
-            'read_ order',
+            'read_order',
             'update_order',
             'delete_order'
 
@@ -58,7 +58,7 @@ export const roles = [
             'update_product',
             'delete_product',
             'create_order',
-            'read_ order',
+            'read_order',
             'update_order',
             'delete_order'
         ]
@@ -69,7 +69,7 @@ export const roles = [
             'update_profile',
             'delete_profile',
             'create_order',
-            'read_ order',
+            'read_order',
             'update_order',
             'delete_order'
         ]
