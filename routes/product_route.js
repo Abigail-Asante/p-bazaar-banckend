@@ -6,8 +6,11 @@ import { remoteUpload } from "../middleware/upload.js";
 const productRouter = Router();
 
 productRouter.post('/user/product', userAuthentication, hasPermission('create_product'), remoteUpload.single('image'), createProduct);
+
 productRouter.get('/user/product', getProducts);
+
 productRouter.patch('/user/product/:id', userAuthentication, hasPermission('update_product'),updateProduct);
+
 productRouter.delete('/user/product/:id', userAuthentication, hasPermission('delete_product'), deleteProduct);
 
 

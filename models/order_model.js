@@ -1,5 +1,6 @@
 import { Schema, model, Types } from "mongoose";
 import { toJSON } from "@reis/mongoose-to-json";
+import mongooseErrors from "mongoose-errors";
 
 const orderSchema = new Schema({
     userId: { type: Schema.Types.ObjectId, ref: 'User' },
@@ -9,6 +10,6 @@ const orderSchema = new Schema({
 }, {
     timestamps: true
 });
-orderSchema.plugin(toJSON);
+orderSchema.plugin(mongooseErrors).plugin(toJSON);
 
 export const OrderModel = model('Oder', orderSchema);

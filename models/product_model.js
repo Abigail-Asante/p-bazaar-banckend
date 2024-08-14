@@ -1,5 +1,6 @@
 import { Schema, model, Types } from "mongoose";
 import { toJSON } from "@reis/mongoose-to-json";
+import mongooseErrors from "mongoose-errors";
 
 
 const productSchema = new Schema({
@@ -16,5 +17,5 @@ const productSchema = new Schema({
 }, {
     timestamps: true,
 });
-productSchema.plugin(toJSON);
+productSchema.plugin(mongooseErrors).plugin(toJSON);
 export const ProductModel = model('Product', productSchema);
