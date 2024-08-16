@@ -10,11 +10,11 @@ userRouter.post('/user/auth/login',  loginUser);
 
 userRouter.get('/user/auth/profile',userAuthentication, profile);
 
-userRouter.post('/user/forgot-password', forgotPassword);
+userRouter.post('/user/auth/forgot-password', forgotPassword);
 
-userRouter.get('/user/reset-token/:id', verifyResetToken);
+userRouter.get('/user/auth/reset-token/:id', verifyResetToken);
 
-userRouter.post('/user/reset-password', resetPassword);
+userRouter.post('/user/auth/reset-password', resetPassword);
 
 userRouter.get('/user/auth/getUsers',userAuthentication, hasPermission('read_users'), getAllUsers);
 

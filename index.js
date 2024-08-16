@@ -13,7 +13,7 @@ import orderRouter from "./routes/order_route.js";
 const app = express();
 expressOasGenerator.handleResponses(app, {
 alwaysServeDocs: true,
-tags: ['auth'],
+tags: ['auth','product','order'],
 mongooseModels: mongoose.modelNames(),
 
 })
